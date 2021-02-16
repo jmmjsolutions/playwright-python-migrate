@@ -22,7 +22,7 @@ With Python Playwright moving from pre to release with version 1.8, the API has 
   from playwright.sync_api import sync_playwright
   ```
 
-This script will migrate pre-release test cases to the new API. It handles automatic conversion of camelCase method names to snake_case for the following method names:
+This script will migrate pre-release test cases to the new API. It uses Bowler (https://pybowler.io/) to do the heavy lifting for migration. The script handles automatic conversion of camelCase method names to snake_case for the following method names:
 
 ```
 evalOnSelector to eval_on_selector 
