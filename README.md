@@ -55,3 +55,71 @@ The Playwright migration utility can be installed from [GitHub](https://github.c
 
     python setup.py install
 
+## Usage
+
+The Playwright migration utility is a Python program that reads the test case source code and applies a series of fixers to transform the test case to valid Playwright 1.8.0 API calls.
+
+So if we have a simple test case source file: test_example.py
+
+```py
+from playwright import sync_playwright
+
+with sync_playwright() as pw:
+browser = pw.webkit.launch(headless=False)
+    context = browser.newContext()
+    page = context.newPage()
+    page.goto("https://playwright.dev/python/docs/intro/")
+
+    assert page.url == "https://playwright.dev/python/docs/intro/"
+
+    browser.close()
+```
+
+We can run the migration utility in a non destructive mode to see what changes would be made.
+
+```
+playwright-migrate test_example.py
+```
+This will produce the following output on the console:
+
+```diff
+--- test_example.py
++++ test_example.py
+@@ -1,8 +1,8 @@
+-from playwright import sync_playwright
++from playwright.sync_api import sync_playwright
+
+ with sync_playwright() as pw:
+     browser = pw.webkit.launch(headless=False)
+-    context = browser.newContext()
+-    page = context.newPage()
++    context = browser.new_context()
++    page = context.new_page()
+     page.goto("https://playwright.dev/python/docs/intro/")
+
+     assert page.url == "https://playwright.dev/python/docs/intro/"
+```
+
+To apply the changes to the actual source code, run the migration utility with the --write argument. The utility creates a backup e.g. test_example.py.bak before overwriting the original file with the changes.
+
+```
+playwright-migrate --write test_example.py
+```
+
+The test_example.py file will now look like:
+
+```py
+from playwright.sync_api import sync_playwright
+
+with sync_playwright() as pw:
+    browser = pw.webkit.launch(headless=False)
+    context = browser.new_context()
+    page = context.new_page()
+    page.goto("https://playwright.dev/python/docs/intro/")
+
+    assert page.url == "https://playwright.dev/python/docs/intro/"
+
+    browser.close()
+```
+
+
