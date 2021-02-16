@@ -18,7 +18,7 @@ PACKAGES = find_packages(exclude=["ez_setup"])
 DESCRIPTION = "Migrate test cases from Playwright pre-release to 1.8+ API"
 URL = "https://github.com/jmmjsolutions/playwright-python-migrate"
 LICENSE = "Apache License Version 2.0"
-LONG_DESCRIPTION = open(os.path.join(this_dir, "README.rst")).read()
+LONG_DESCRIPTION = open(os.path.join(this_dir, "README.md")).read()
 REQUIREMENTS = [
     _f
     for _f in open(os.path.join(this_dir, "requirements.txt")).read().splitlines()
