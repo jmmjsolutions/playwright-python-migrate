@@ -65,7 +65,7 @@ So if we have a simple test case source file: test_example.py
 from playwright import sync_playwright
 
 with sync_playwright() as pw:
-browser = pw.webkit.launch(headless=False)
+    browser = pw.webkit.launch(headless=False)
     context = browser.newContext()
     page = context.newPage()
     page.goto("https://playwright.dev/python/docs/intro/")
@@ -85,7 +85,7 @@ This will produce the following output on the console:
 ```diff
 --- test_example.py
 +++ test_example.py
-@@ -1,8 +1,8 @@
+@@ -1,9 +1,9 @@
 -from playwright import sync_playwright
 +from playwright.sync_api import sync_playwright
 
