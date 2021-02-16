@@ -36,7 +36,7 @@ CLASSIFIERS = [
     "Topic :: Software Development :: Testing",
 ]
 CONSOLE_SCRIPTS = [
-    'playwright_migrate = playwright_migrate.main:main',
+    'playwright-migrate = playwright_migrate.main:main',
 ]
 
 
