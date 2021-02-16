@@ -44,4 +44,15 @@ It will also fix sync_playwright imports of the following format:
 from playwright import sync_playwright
 ```
 
+*******************
+    Install / Setup
+*******************
+
+The Playwright migration utility can be installed from `GitHub <https://github.com/jmmjsolutions/playwright-python-migrate>`_ using `pip <http://www.pip-installer.org>`_::
+    
+    pip install git+https://github.com/jmmjsolutions/playwright-python-migrate.git
+
+... or download the `source distribution from GitHub <https://github.com/jmmjsolutions/playwright-python-migrate/archive/master.zip>`_, unarchive, and run::
+
+    python setup.py install
 
