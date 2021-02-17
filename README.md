@@ -22,21 +22,7 @@ With Python Playwright moving from pre to release with version 1.8, the API has 
   from playwright.sync_api import sync_playwright
   ```
 
-This script will migrate pre-release test cases to the new API. It uses Bowler (https://pybowler.io/) to do the heavy lifting for migration. The script handles automatic conversion of camelCase method names to snake_case for the following method names:
-
-```
-evalOnSelector to eval_on_selector 
-expectDownload to expect_download
-expectFileChooser to expect_file_chooser
-newPage to new_page
-newContext to new_context
-innerText to inner_text
-setInputFiles to set_input_files
-waitForLoadState to wait_for_load_state
-waitForSelector to wait_for_selector
-querySelector to query_selector
-querySelectorAll to query_selector_all
-```
+This script will migrate pre-release test cases to the new API. It uses Bowler (https://pybowler.io/) to do the heavy lifting for migration. The script handles automatic conversion of camelCase method names to snake_case. See methods list for method names that can be converted. https://github.com/jmmjsolutions/playwright-python-migrate/blob/master/playwright_migrate/main.py
 
 It will also fix sync_playwright imports of the following format:
 

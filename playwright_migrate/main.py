@@ -5,17 +5,38 @@ import argparse
 from bowler import Query
 
 methods = [
+    ("addInitScript", "add_init_script"),
+    ("addScriptTag", "add_script_tag"),
+    ("addStyleTag", "add_style_tag"),
+    ("bringToFront", "bring_to_front"),
+    ("dispatchEvent", "dispatch_event"),
+    ("emulateMedia", "emulate_media"),
     ("evalOnSelector", "eval_on_selector"),
+    ("evalOnSelectorAll", "eval_on_selector_all"),
+    ("evaluateHandle", "evaluate_handle"),
     ("expectDownload", "expect_download"),
     ("expectFileChooser", "expect_file_chooser"),
+    ("exposeBinding", "expose_binding"),
+    ("exposeFunction", "expose_function"),
     ("newPage", "new_page"),
     ("newContext", "new_context"),
+    ("innerHTML", "inner_html"),
     ("innerText", "inner_text"),
+    ("setContent", "set_content"),
+    ("setDefaultNavigationTimeout", "set_default_navigation_timeout"),
+    ("setDefaultTimeout", "set_default_timeout"),
+    ("setExtraHTTPHeaders", "set_extra_http_headers"),
     ("setInputFiles", "set_input_files"),
+    ("setViewportSize", "set_viewport_size"),
+    ("textContent", "text_content"),
+    ("viewportSize", "viewport_size"),
+    ("waitForEvent", "wait_for_event"),
+    ("waitForFunction","wait_for_function"),
     ("waitForLoadState", "wait_for_load_state"),
     ("waitForSelector", "wait_for_selector"),
     ("querySelector", "query_selector"),
     ("querySelectorAll", "query_selector_all"),
+    ("waitForTimeout","wait_for_timeout"),
 ]
 
 
